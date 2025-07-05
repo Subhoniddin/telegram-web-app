@@ -1,12 +1,10 @@
-import "swiper/css";
-import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, CardContent } from "../ui/card";
 import { Pagination } from "swiper/modules";
 
-export default function ProductCard({ product }) {
+function ProductCard({ product }) {
   return (
-    <Card className="w-full rounded-xl overflow-hidden p-0">
+    <Card className="w-full rounded-xl overflow-hidden p-2">
       <Swiper
         pagination={{ clickable: true }}
         modules={[Pagination]}
@@ -36,3 +34,5 @@ export default function ProductCard({ product }) {
     </Card>
   );
 }
+
+export default ProductCard;

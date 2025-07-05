@@ -7,6 +7,7 @@ export const caregories = [
 
 export const products = [
   {
+    id: 1,
     images: [
       "https://picsum.photos/id/237/200/300",
       "https://picsum.photos/id/237/200/300",
@@ -18,6 +19,7 @@ export const products = [
     color: "Белый",
   },
   {
+    id: 2,
     images: [
       "https://picsum.photos/id/237/200/300",
       "https://picsum.photos/id/237/200/300",
@@ -29,6 +31,7 @@ export const products = [
     color: "Белый",
   },
   {
+    id: 3,
     images: [
       "https://picsum.photos/id/237/200/300",
       "https://picsum.photos/id/237/200/300",
@@ -40,6 +43,7 @@ export const products = [
     color: "Белый",
   },
   {
+    id: 4,
     images: ["https://picsum.photos/200/300", "https://picsum.photos/200/300"],
     price: 6000,
     oldPrice: 7200,

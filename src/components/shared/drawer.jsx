@@ -17,21 +17,18 @@ function DrawerCategory() {
           Kategoriyalar
         </p>
       </DrawerTrigger>
-      <DrawerContent className="bg-white p-6 w-full max-w-md h-full">
-        <DrawerHeader>
-          <DrawerTitle>
-            {caregories.map((item, index) => (
-              <Button
-                key={index}
-                variant="secondary"
-                className="inline-block px-3 py-1 rounded-md"
-              >
-                {item}
-              </Button>
-            ))}
-          </DrawerTitle>
-          <DrawerDescription>Kerakli kategoriyani tanlang...</DrawerDescription>
-        </DrawerHeader>
+      <DrawerContent className="bg-white bg-background w-full max-w-md">
+        <DrawerTitle className={"flex flex-col items-start py-5"}>
+          {caregories.map((item, index) => (
+            <Button
+              key={index}
+              variant="ghost"
+              className="border-b py-6 mb-1 text-2xl"
+            >
+              {item}
+            </Button>
+          ))}
+        </DrawerTitle>
       </DrawerContent>
     </Drawer>
   );
