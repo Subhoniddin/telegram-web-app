@@ -1,6 +1,13 @@
-// src/components/DrawerCategory.jsx
-import { categories } from "@constants"; // @ bilan import
-import { Button } from "@ui/button";
+import { Button } from "../ui/button";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../ui/drawer";
+import { caregories } from "../../constants";
 
 function DrawerCategory() {
   return (
@@ -13,7 +20,7 @@ function DrawerCategory() {
       <DrawerContent className="bg-white p-6 w-full max-w-md h-full">
         <DrawerHeader>
           <DrawerTitle>
-            {categories.map((item, index) => (
+            {caregories.map((item, index) => (
               <Button
                 key={index}
                 variant="secondary"
