@@ -7,14 +7,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 
 function Dropdown() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <div className="bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 px-3 py-2 h-full rounded-lg">
+      <DropdownMenuTrigger asChild>
+        <Button variant={"secondary"}>
           <ArrowUpDown size={"18"} />
-        </div>
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Filterlash</DropdownMenuLabel>

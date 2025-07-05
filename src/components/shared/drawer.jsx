@@ -12,12 +12,10 @@ import { caregories } from "../../constants";
 function DrawerCategory() {
   return (
     <Drawer>
-      <DrawerTrigger>
-        <p className="bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-9 px-3 py-1 rounded-lg">
-          Kategoriyalar
-        </p>
+      <DrawerTrigger asChild>
+        <Button variant="secondary">Kategoriyalar</Button>
       </DrawerTrigger>
-      <DrawerContent className="bg-white bg-background w-full max-w-md">
+      <DrawerContent className="bg-white bg-background w-full">
         <DrawerTitle className={"flex flex-col items-start py-5"}>
           {caregories.map((item, index) => (
             <Button
