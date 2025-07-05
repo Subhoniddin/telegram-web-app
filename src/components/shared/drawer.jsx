@@ -7,9 +7,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../ui/drawer";
-import { caregories } from "../../constants";
 
-function DrawerCategory() {
+function DrawerCategory({ categories }) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -17,7 +16,7 @@ function DrawerCategory() {
       </DrawerTrigger>
       <DrawerContent className="bg-white bg-background w-full">
         <DrawerTitle className={"flex flex-col items-start py-5"}>
-          {caregories.map((item, index) => (
+          {categories?.map((item, index) => (
             <Button
               key={index}
               variant="ghost"

@@ -4,6 +4,7 @@ import { Card, CardContent } from "../ui/card";
 import { Pagination } from "swiper/modules";
 import { Link } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { formatPrice } from "@/lib/utils";
 
 function ProductsCard({ product }) {
   return (
@@ -25,11 +26,11 @@ function ProductsCard({ product }) {
           ))}
         </Swiper>
 
-        <CardContent className="p-3 space">
+        <CardContent className="p-3 space pt-0">
           <div className="text-sm font-semibold text-foreground">
-            RUB {product.price}
+            {formatPrice(product.price)}
             <span className="line-through text-muted-foreground ml-2 text-xs">
-              RUB {product.oldPrice}
+              {formatPrice(product.oldPrice)}
             </span>
           </div>
           <div className="text-sm text-foreground">{product.title}</div>

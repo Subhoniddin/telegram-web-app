@@ -1,6 +1,9 @@
+import "swiper/css";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, CardContent } from "../ui/card";
 import { Pagination } from "swiper/modules";
+import { formatPrice } from "@/lib/utils";
 
 function ProductCard({ product }) {
   return (
@@ -23,9 +26,9 @@ function ProductCard({ product }) {
 
       <CardContent className="p-3 space">
         <div className="text-sm font-semibold text-foreground">
-          RUB {product.price}
+          {formatPrice(product.oldPrice)}
           <span className="line-through text-muted-foreground ml-2 text-xs">
-            RUB {product.oldPrice}
+            {formatPrice(product.oldPrice)}
           </span>
         </div>
         <div className="text-sm text-foreground">{product.title}</div>
