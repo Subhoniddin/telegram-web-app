@@ -6,10 +6,10 @@ import CategoryPage from "@/pages/category";
 
 function App() {
   const telegramId = window.Telegram?.WebApp?.initDataUnsafe?.user?.id;
-  <p>{telegramId}</p>;
 
   return (
     <>
+      <p>{telegramId}</p>;
       <ThemeProvider>
         <Routes>
           <Route path="/" element={<Home />} />
