@@ -39,7 +39,6 @@ function App() {
         <pre style={{ textAlign: "left" }}>{JSON.stringify(data, null, 2)}</pre>
       </div>
       <ThemeProvider>
-        <p>telegram id: {telegramId}</p>;
         <pre>
           salom bu user
           {JSON.stringify(window.Telegram?.WebApp?.initDataUnsafe, null, 2)}
