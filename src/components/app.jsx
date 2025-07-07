@@ -4,12 +4,14 @@ import { ThemeProvider } from "./provider/theme-provider";
 import Product from "../pages/product";
 import CategoryPage from "@/pages/category";
 import TelegramWeb from "./telegramWeb";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  let isTelegram = null;
+  const [isTelegram, setIsTelegram] = useState(null);
+
   useEffect(() => {
-    isTelegram = !!window.Telegram?.WebApp?.initDataUnsafe?.user;
+    const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+    setIsTelegram(!!user);
   }, []);
 
   if (!isTelegram) {
