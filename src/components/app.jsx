@@ -11,6 +11,9 @@ function App() {
     <>
       <ThemeProvider>
         <p>telegram id: {telegramId}</p>;
+        <pre>
+          {JSON.stringify(window.Telegram?.WebApp?.initDataUnsafe, null, 2)}
+        </pre>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="product/:id" element={<Product />} />
