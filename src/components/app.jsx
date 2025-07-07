@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <p>{telegramId}</p>;
       <ThemeProvider>
+        <p>telegram id: {telegramId}</p>;
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="product/:id" element={<Product />} />
