@@ -3,8 +3,16 @@ import Home from "../pages/home";
 import { ThemeProvider } from "./provider/theme-provider";
 import Product from "../pages/product";
 import CategoryPage from "@/pages/category";
+import TelegramWeb from "./telegramWeb";
+export const isInTelegramWebApp = () => {
+  return !!window.Telegram?.WebApp?.initDataUnsafe?.user;
+};
 
 function App() {
+  const isTelegram = isInTelegramWebApp();
+
+  isTelegram && <TelegramWeb />;
+
   return (
     <>
       <ThemeProvider>
