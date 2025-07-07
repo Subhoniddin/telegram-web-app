@@ -7,14 +7,34 @@ import TelegramWeb from "./telegramWeb";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [isTelegram, setIsTelegram] = useState(null);
+  const [isReady, setIsReady] = useState(false);
+  const [isTelegramUser, setIsTelegramUser] = useState(null);
 
   useEffect(() => {
-    const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
-    setIsTelegram(!!user);
+    const init = async () => {
+      const tg = window.Telegram?.WebApp;
+      if (!tg) {
+        setIsTelegramUser(false);
+        setIsReady(true);
+        return;
+      }
+
+      tg.ready(); // WebApp tayyor
+      await new Promise((resolve) => setTimeout(resolve, 100)); // 100ms kutish
+
+      const user = tg.initDataUnsafe?.user;
+      setIsTelegramUser(!!user);
+      setIsReady(true);
+    };
+
+    init();
   }, []);
 
-  if (!isTelegram) {
+  if (!isReady || isTelegramUser === null) {
+    return <div>⏳ Yuklanmoqda...</div>;
+  }
+
+  if (!isTelegramUser) {
     return <TelegramWeb />;
   }
 
